@@ -65,18 +65,6 @@ python manage.py runserver
 
 Your Django backend server should now run on `http://127.0.0.1:8000`
 
-### ⚛️ Frontend Setup (if applicable)
-
-```bash
-cd chat_react              # or your frontend folder
-npm install
-npm start
-```
-
-Frontend should now run on `http://127.0.0.1:3000`
-
-> ⚠️ Use `127.0.0.1:3000` instead of `localhost:3000` to avoid cookie/CORS issues when talking to the backend.
-
 ---
 
 ## 🛠️ Configuration
