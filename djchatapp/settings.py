@@ -76,7 +76,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djchatapp.wsgi.application'
-ASGI_APPLICATION = "djchatapp.asgi.application"
+# ASGI_APPLICATION = "djchatapp.asgi.application"
+ASGI_APPLICATION = 'djchatapp.asgi.application'
+
 
 
 
