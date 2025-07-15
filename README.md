@@ -88,11 +88,10 @@ Frontend should now run on `http://127.0.0.1:3000`
 ---
 
 ## 📸 Screenshots / Demo
-
-
-
+<img width="1366" height="768" alt="Screenshot from 2025-07-15 20-56-46" src="https://github.com/user-attachments/assets/49b493a3-a572-44f1-ad34-3024f5a64d8b" />
 
 After new message sent by code 
+<img width="1366" height="768" alt="Screenshot from 2025-07-15 20-56-57" src="https://github.com/user-attachments/assets/224ae7cd-c62c-459a-97a0-c588b6a8ac75" />
 
 ---
 
