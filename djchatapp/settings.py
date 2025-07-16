@@ -35,7 +35,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'https://djangochat-fhta.onrender.com'
+    'djangochat-fhta.onrender.com'
     # '.onrender.com'
     
     ]
