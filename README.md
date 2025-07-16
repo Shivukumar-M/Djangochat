@@ -3,6 +3,8 @@
 
 A real‑time chat application built with Django, Django Channels, WebSockets, and React (or plain JS), enabling instant messaging, friend requests, group chats, and real‑time notifications.
 
+https://djangochat-fhta.onrender.com
+
 ---
 
 ## 🚀 Features
