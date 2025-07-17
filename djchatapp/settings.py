@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 
-# import os
+import os
 from pathlib import Path
-# from decouple import config  
-# import dj_database_url  
+from decouple import config  
+import dj_database_url  
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,22 +24,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = 'django-insecure-sud(&tl3lzdx%zs*i#jibqt-hee7&+%o9%m0p@ub98g^m5@usy'
-
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'djangochat-fhta.onrender.com'
-    # '.onrender.com'
-    
-    ]
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
 
 
 LOGOUT_REDIRECT_URL = '/'
@@ -106,16 +98,24 @@ CHANNEL_LAYERS = {
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+DATABASE_URL = config('DATABASE_URL', default=None)
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600 # Optional
+        )
     }
-}
-# DATABASES = {
-#     'default': dj_database_url.config(default=config('DATABASE_URL'))
-# }
+else:
+    # Fallback to SQLite for local development if no DATABASE_URL is set
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
 
 
 
