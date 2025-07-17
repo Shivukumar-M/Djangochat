@@ -37,7 +37,7 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.security.websocket import AllowedHostsOriginValidator 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djchatapp.settings') 
-
+django.setup()
 import rooms.routing
 
 # django_asgi_app = django.core.asgi.get_asgi_application()
